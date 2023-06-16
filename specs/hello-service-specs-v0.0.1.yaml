@@ -3,7 +3,7 @@ info:
   title: Hello Service
   version: '1.0'
 servers:
-  - url: https://api.server.test/v1
+  - url: http://localhost:3000/v1
 paths:
   /:
     get:
@@ -13,41 +13,23 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ContactModel'
+                $ref: '#/components/schemas/responses/default'
+              examples:
+                Simple:
+                  value:
+                    id: ed2c5a12fbfe5ab02d5aa3aa
+                    contact:
+                      firstName: Lamar
+                      lastName: Ritchie
+                    address:
+                      address1: 69502 Schultz Estates
+                      address2: ''
+                      city: Ileneland
+                      state: OH
+                      postalCode: 13685-9187
 
 components:
   schemas:
-    ContactModel:
-      type: object
-      properties:
-        id:
-          type: string
-        contact:
-          $ref: '#/components/schemas/NameModel'
-        address:
-          $ref: '#/components/schemas/AddressModel'
-    NameModel:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-    AddressModel:
-      type: object
-      properties:
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        state:
-          type: string
-        postalCode:
-          type: string
-
-        
-
-
-
+    responses:
+      default:
+        $ref: 'hello-service-specs-schema-v0.0.1.yaml#/components/schemas/ContactModel'
