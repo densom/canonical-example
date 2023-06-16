@@ -1,1 +1,0 @@
-mockoon-cli start --data .\bin\mockoon-data\storage\hello-service-environment.json
