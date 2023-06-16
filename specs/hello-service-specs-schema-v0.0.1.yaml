@@ -16,6 +16,11 @@ components:
           type: string
         lastName:
           type: string
+      examples:
+        Simple:
+          value:
+            firstName: Dennis
+            lastName: Smith
     AddressModel:
       type: object
       properties:
@@ -29,6 +34,14 @@ components:
           type: string
         postalCode:
           type: string
+      examples:
+        Simple:
+          value:
+            address1: 123 Easy Street
+            address2: ''
+            city: Cleveland
+            state: OH
+            postalCode: 44115-1234
 
         
 
